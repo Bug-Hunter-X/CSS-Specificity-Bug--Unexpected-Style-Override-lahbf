@@ -1,0 +1,17 @@
+The following CSS code snippet exhibits an uncommon error related to the specificity of CSS selectors.  The `#myId .myClass` selector has higher specificity than the `.myClass` selector due to the presence of the ID selector (`#myId`). This means that the styles defined for `#myId .myClass` will override the styles defined for `.myClass`, even though `.myClass` appears later in the CSS.
+
+```css
+.myClass {
+  color: blue;
+}
+
+#myId .myClass {
+  color: red;
+}
+
+#myId {
+  background-color: yellow;
+}
+```
+
+In this example, an element with both the ID `myId` and the class `myClass` will have red text, even though the `.myClass` rule appears first, and an element with only the class `myClass` will have blue text.
